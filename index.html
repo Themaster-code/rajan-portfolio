@@ -17,9 +17,9 @@
         <div class="container nav-container">
             <a href="#" class="logo" onclick="showHero(event)">Rajan<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="#" onclick="showHero(event)">Home</a></li>
-                <li class="view-link"><a href="#about-section">About</a></li>
-                <li class="view-link"><a href="#portfolio-section">Work</a></li>
+                <li id="nav-item-home" style="display:none;"><a href="#" onclick="showHero(event)">Home</a></li>
+                <li id="nav-item-about" style="display:none;" class="view-link"><a href="#about-section" id="nav-link-about">About</a></li>
+                <li id="nav-item-work" style="display:none;" class="view-link"><a href="#portfolio-section" id="nav-link-work">Work</a></li>
                 <li><a href="#contact" class="btn-primary-small">Let's Talk</a></li>
             </ul>
             <div class="hamburger">
@@ -232,7 +232,7 @@
     <!-- ========================================== -->
     <div id="editor-view" class="content-view" style="display: none;">
         <!-- Editing Philosophy -->
-        <section class="section">
+        <section id="editor-philosophy" class="section">
             <div class="container container-sm scroll-fade">
                 <h2 class="section-title text-center"><span class="highlight">Editing</span> Philosophy</h2>
                 <div class="philosophy-text" style="margin-top: 2rem; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
@@ -280,7 +280,7 @@
         </section>
 
         <!-- Video Portfolio Showcase -->
-        <section class="section">
+        <section id="editor-portfolio" class="section">
             <div class="container">
                 <div class="section-header scroll-fade">
                     <h2 class="section-title">Featured <span class="highlight">Edits</span></h2>

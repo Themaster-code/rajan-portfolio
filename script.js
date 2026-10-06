@@ -77,9 +77,18 @@ function switchView(view) {
     const thumbnailView = document.getElementById('thumbnail-view');
     const editorView = document.getElementById('editor-view');
     
+    // Show nav items
+    document.getElementById('nav-item-home').style.display = 'block';
+    document.getElementById('nav-item-about').style.display = 'block';
+    document.getElementById('nav-item-work').style.display = 'block';
+
     if (view === 'thumbnail') {
         thumbnailView.style.display = 'block';
         editorView.style.display = 'none';
+        
+        // Update nav links for thumbnail view
+        document.getElementById('nav-link-about').href = '#about-section';
+        document.getElementById('nav-link-work').href = '#portfolio-section';
         
         // Scroll to content
         window.scrollTo({
@@ -89,6 +98,10 @@ function switchView(view) {
     } else if (view === 'editor') {
         editorView.style.display = 'block';
         thumbnailView.style.display = 'none';
+        
+        // Update nav links for editor view
+        document.getElementById('nav-link-about').href = '#editor-philosophy';
+        document.getElementById('nav-link-work').href = '#editor-portfolio';
         
         // Scroll to content
         window.scrollTo({
@@ -105,6 +118,11 @@ function showHero(e) {
     if(e) e.preventDefault();
     const thumbnailView = document.getElementById('thumbnail-view');
     const editorView = document.getElementById('editor-view');
+    
+    // Hide nav items on launch page
+    document.getElementById('nav-item-home').style.display = 'none';
+    document.getElementById('nav-item-about').style.display = 'none';
+    document.getElementById('nav-item-work').style.display = 'none';
     
     thumbnailView.style.display = 'none';
     editorView.style.display = 'none';

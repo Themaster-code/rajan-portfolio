@@ -711,7 +711,7 @@ footer {
 /* === VIDEO EDITOR STYLES === */
 .video-grid { display: flex; flex-direction: column; gap: 4rem; }
 .video-card { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-.custom-video-wrapper { position: relative; width: 100%; max-width: 350px; margin: 0 auto; aspect-ratio: 9/16; background: #000; border-radius: 8px; overflow: hidden; }
+.custom-video-wrapper { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 8px; overflow: hidden; }
 .portfolio-video { width: 100%; height: 100%; object-fit: contain; }
 .video-controls { position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px 20px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); display: flex; align-items: center; gap: 15px; opacity: 0; transition: opacity 0.3s ease; flex-wrap: wrap; }
 .custom-video-wrapper:hover .video-controls { opacity: 1; }
@@ -759,4 +759,19 @@ footer {
 .progress-container { width: 100%; height: 6px; background: rgba(255,255,255,0.2); cursor: pointer; border-radius: 3px; position: relative; }
 .progress-container:hover { height: 8px; transform: translateY(-1px); }
 .progress-bar { height: 100%; background: var(--accent-blue); width: 0%; border-radius: 3px; pointer-events: none; transition: width 0.1s linear; }
+
+
+/* === MOBILE GOOGLE DRIVE PLAYER FIX === */
+@media (max-width: 768px) {
+    /* Stop clipping Google Drive's edge buttons (like fullscreen) */
+    .video-card, .custom-video-wrapper {
+        border-radius: 0 !important;
+        overflow: visible !important;
+    }
+    
+    /* Change from horizontal 16:9 to vertical 9:16 to hug the vertical video */
+    .custom-video-wrapper {
+        aspect-ratio: 9/16 !important;
+    }
+}
 

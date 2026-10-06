@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajan Deshmukh | Professional Thumbnail Designer</title>
-    <meta name="description" content="Portfolio of Rajan Deshmukh - YouTube Thumbnail Designer focusing on CTR, psychology, and storytelling.">
-    <!-- Google Fonts for a professional look -->
+    <title>Rajan Deshmukh | Portfolio</title>
+    <meta name="description" content="Portfolio of Rajan Deshmukh - YouTube Thumbnail Designer & Video Editor">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,12 +15,11 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Rajan<span>.</span></a>
+            <a href="#" class="logo" onclick="showHero(event)">Rajan<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#skills">Expertise</a></li>
-                <li><a href="#portfolio">Work</a></li>
+                <li><a href="#" onclick="showHero(event)">Home</a></li>
+                <li class="view-link"><a href="#about-section">About</a></li>
+                <li class="view-link"><a href="#portfolio-section">Work</a></li>
                 <li><a href="#contact" class="btn-primary-small">Let's Talk</a></li>
             </ul>
             <div class="hamburger">
@@ -31,253 +28,349 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="hero">
-        <div class="container hero-container fade-in-up">
-            <p class="subtitle">YouTube Thumbnail Designer & Video Editor</p>
-            <h1 class="title">Designing visuals that <br><span class="highlight">stop the scroll</span> and drive clicks.</h1>
-            <p class="description">I create high-converting thumbnails based on audience psychology, subtle storytelling, and cinematic visuals. No false dilemmas—just strong composition that increases CTR.</p>
-            <div class="hero-cta">
-                <a href="#portfolio" class="btn-primary">View Portfolio</a>
-                <a href="#about" class="btn-secondary">My Philosophy</a>
+    <!-- Landing / Hero Section -->
+    <header id="hero" class="active-view">
+        <div class="hero-background"></div>
+        
+        <!-- Animated Floating Elements -->
+        <div class="floating-elements">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" alt="Premiere Pro" class="float-icon pr-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg" alt="After Effects" class="float-icon ae-icon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop" class="float-icon ps-icon">
+            
+            <div class="float-panel timeline-panel">
+                <div class="panel-header">Timeline: sequence_01</div>
+                <div class="panel-tracks">
+                    <div class="track v-track"><div class="clip v-clip" style="width: 60%;"></div><div class="clip v-clip" style="width: 30%;"></div></div>
+                    <div class="track a-track"><div class="clip a-clip" style="width: 100%;"></div></div>
+                </div>
             </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <h3>CTR</h3>
-                    <p>Optimized</p>
+            
+            <div class="float-panel lumetri-panel">
+                <div class="panel-header">Lumetri Color</div>
+                <div class="color-wheel"></div>
+                <div class="color-slider"></div>
+                <div class="color-slider" style="width: 60%"></div>
+            </div>
+
+            <div class="float-panel audio-panel">
+                <div class="panel-header">Audio</div>
+                <div class="meters-container">
+                    <div class="meter"><div class="level level-1"></div></div>
+                    <div class="meter"><div class="level level-2"></div></div>
                 </div>
-                <div class="stat-item">
-                    <h3>Psychology</h3>
-                    <p>Driven Design</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Storytelling</h3>
-                    <p>Focused</p>
-                </div>
+            </div>
+            
+            <div class="float-panel layers-panel">
+                <div class="panel-header">Layers</div>
+                <div class="blend-mode-select">Normal <span>▼</span></div>
+                <div class="layer-item"><i class="fas fa-eye"></i> Adjustment</div>
+                <div class="layer-item active"><i class="fas fa-eye"></i> Subject</div>
+                <div class="layer-item"><i class="fas fa-eye"></i> Background</div>
+            </div>
+
+            <div class="float-panel toolbar-panel">
+                <div class="tool"><i class="fas fa-mouse-pointer"></i></div>
+                <div class="tool active"><i class="fas fa-cut"></i></div>
+                <div class="tool"><i class="fas fa-pen-nib"></i></div>
+                <div class="tool"><i class="fas fa-hand-paper"></i></div>
+                <div class="tool"><i class="fas fa-search"></i></div>
             </div>
         </div>
-        <div class="hero-background"></div>
+
+        <div class="hero-center container">
+            <div class="hero-name-container fade-in-up">
+                <h1 class="name-text">RAJAN</h1>
+                <div class="hero-image-wrapper">
+                    <img src="assets/profile.jpg" alt="Rajan Deshmukh">
+                </div>
+                <h1 class="name-text">DESHMUKH</h1>
+            </div>
+            
+            <div class="hero-roles fade-in-up" style="animation-delay: 0.2s;">
+                <button class="role-btn" onclick="switchView('thumbnail')">
+                    <span class="role-title">THUMBNAIL DESIGNER</span>
+                    <span class="role-action">View Portfolio <i class="fas fa-arrow-right"></i></span>
+                </button>
+                <div class="role-divider"></div>
+                <button class="role-btn" onclick="switchView('editor')">
+                    <span class="role-title">VIDEO EDITOR</span>
+                    <span class="role-action">View Portfolio <i class="fas fa-arrow-right"></i></span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container about-container">
-            <div class="about-content scroll-fade">
+    <!-- ========================================== -->
+    <!-- THUMBNAIL DESIGNER VIEW                    -->
+    <!-- ========================================== -->
+    <div id="thumbnail-view" class="content-view" style="display: none;">
+        <!-- About Section (No Image, centered) -->
+        <section id="about-section" class="section">
+            <div class="container container-sm text-center scroll-fade">
                 <h2 class="section-title">A thumbnail is not decoration.<br><span class="highlight">It's communication.</span></h2>
-                <p>I'm Rajan Deshmukh, a YouTube Thumbnail Designer. My work uses an understanding of viewer psychology to create visuals that make people stop scrolling and click.</p>
-                <p>Rather than relying on excessive effects, I focus on cinematic realism, facial emotions with eye contact, visual hierarchy, and strong composition.</p>
-                <p><strong>Every design is created with one purpose:</strong> Increase Click-Through Rate while maintaining authenticity.</p>
+                <p class="body-text" style="margin-top: 2rem;">My work uses an understanding of viewer psychology to create visuals that make people stop scrolling and click. Rather than relying on excessive effects, I focus on cinematic realism, facial emotions with eye contact, visual hierarchy, and strong composition.</p>
+                <p class="body-text" style="margin-top: 1rem;"><strong>Every design is created with one purpose:</strong> Increase Click-Through Rate while maintaining authenticity.</p>
             </div>
-            <!-- Professional Photo -->
-            <div class="about-image scroll-fade">
-                <img src="assets/profile.jpg" alt="Rajan Deshmukh" class="profile-img">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Process & Philosophy Section -->
-    <section id="process" class="section bg-darker">
-        <div class="container">
-            <div class="section-header scroll-fade">
-                <h2 class="section-title">Design <span class="highlight">Philosophy</span></h2>
-                <p>A successful thumbnail communicates its message within the first second. Good thumbnails don't just look attractive—they make people curious enough to click.</p>
-            </div>
-
-            <div class="process-grid">
-                <!-- Process items based on PDF -->
-                <div class="process-card scroll-fade">
-                    <i class="fas fa-brain"></i>
-                    <h3>Audience Psychology</h3>
-                    <p>Understanding what triggers curiosity and emotional connection for the target demographic.</p>
+        <!-- Process & Philosophy Section -->
+        <section class="section bg-darker">
+            <div class="container">
+                <div class="section-header scroll-fade">
+                    <h2 class="section-title">Design <span class="highlight">Philosophy</span></h2>
+                    <p>A successful thumbnail communicates its message within the first second. Good thumbnails don't just look attractive—they make people curious enough to click.</p>
                 </div>
-                <div class="process-card scroll-fade">
-                    <i class="fas fa-compress-arrows-alt"></i>
-                    <h3>Visual Simplicity</h3>
-                    <p>Creating a strong focal point with clean composition and professional color grading.</p>
-                </div>
-                <div class="process-card scroll-fade">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Storytelling</h3>
-                    <p>Ensuring instant readability and a narrative that complements the video title.</p>
-                </div>
-            </div>
-
-            <div class="workflow-timeline scroll-fade">
-                <h3>My Workflow</h3>
-                <div class="timeline-container">
-                    <span class="timeline-step">Research</span> <i class="fas fa-arrow-right"></i>
-                    <span class="timeline-step">Video Analysis</span> <i class="fas fa-arrow-right"></i>
-                    <span class="timeline-step">Concepting</span> <i class="fas fa-arrow-right"></i>
-                    <span class="timeline-step">AI Generation</span> <i class="fas fa-arrow-right"></i>
-                    <span class="timeline-step">Photoshop Compositing</span> <i class="fas fa-arrow-right"></i>
-                    <span class="timeline-step">Color Grading</span> <i class="fas fa-arrow-right"></i>
-                    <span class="timeline-step">Final Delivery</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills & Strengths Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header scroll-fade">
-                <h2 class="section-title">Technical <span class="highlight">Expertise</span></h2>
-            </div>
-            
-            <div class="skills-wrapper">
-                <div class="skill-category scroll-fade">
-                    <h3><i class="fas fa-pen-nib"></i> Design & Editing</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Advanced Photoshop</li>
-                        <li><i class="fas fa-check"></i> Photo Manipulation</li>
-                        <li><i class="fas fa-check"></i> Color Correction & Grading</li>
-                        <li><i class="fas fa-check"></i> Complex Compositing</li>
-                        <li><i class="fas fa-check"></i> Professional Retouching</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category scroll-fade">
-                    <h3><i class="fas fa-robot"></i> AI Workflow</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> AI Image Generation</li>
-                        <li><i class="fas fa-check"></i> Prompt Engineering</li>
-                        <li><i class="fas fa-check"></i> AI + Photoshop Integration</li>
-                        <li><i class="fas fa-check"></i> Fast Concept Development</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category scroll-fade">
-                    <h3><i class="fas fa-bolt"></i> Key Strengths</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Cinematic Realism</li>
-                        <li><i class="fas fa-check"></i> Minimal & Powerful Designs</li>
-                        <li><i class="fas fa-check"></i> High CTR Thinking</li>
-                        <li><i class="fas fa-check"></i> Strong Subject Separation</li>
-                        <li><i class="fas fa-check"></i> Natural Facial Expressions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section bg-darker">
-        <div class="container">
-            <div class="section-header scroll-fade">
-                <h2 class="section-title">Featured <span class="highlight">Work</span></h2>
-                <p>A selection of thumbnails designed for maximum engagement.</p>
-            </div>
-
-            <!-- Filter Buttons (Prepared for future Video addition) -->
-            <div class="portfolio-filters scroll-fade">
-                <button class="filter-btn active" data-filter="all">All Work</button>
-                <button class="filter-btn" data-filter="thumbnails">Thumbnails</button>
-                <button class="filter-btn" data-filter="videos">Edited Videos</button>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb1.jpg" alt="Historical / Drama Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Historical / Drama</h4>
-                        <p>Cinematic realism and strong visual hierarchy.</p>
+                <div class="process-grid">
+                    <div class="process-card scroll-fade">
+                        <i class="fas fa-brain"></i>
+                        <h3>Audience Psychology</h3>
+                        <p>Understanding what triggers curiosity and emotional connection for the target demographic.</p>
+                    </div>
+                    <div class="process-card scroll-fade">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <h3>Visual Simplicity</h3>
+                        <p>Creating a strong focal point with clean composition and professional color grading.</p>
+                    </div>
+                    <div class="process-card scroll-fade">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Storytelling</h3>
+                        <p>Ensuring instant readability and a narrative that complements the video title.</p>
                     </div>
                 </div>
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb2.jpg" alt="Mythological / Cinematic Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Mythological / Cinematic</h4>
-                        <p>High contrast, expressive emotions, storytelling.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb3.jpg" alt="Modern / Informational Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Modern / Informational</h4>
-                        <p>Clean typography and clear subject separation.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb4.jpg" alt="Social Issue Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Social & Cultural</h4>
-                        <p>Evocative imagery and powerful emotional triggers.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb5.jpg" alt="Current Events Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Current Events / Protest</h4>
-                        <p>High energy, compelling visual storytelling.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb6.jpg" alt="Political Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Political Analysis</h4>
-                        <p>Multiple subject compositing and sharp text hierarchy.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 7 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb7.jpg" alt="Religious Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Religious / Cultural Analysis</h4>
-                        <p>Rich colors, depth of field, and intriguing focal points.</p>
-                    </div>
-                </div>
-                <!-- Portfolio Item 8 -->
-                <div class="portfolio-item thumbnails scroll-fade">
-                    <img src="assets/thumb8.jpg" alt="Controversial Topic Thumbnail" class="portfolio-img">
-                    <div class="portfolio-info">
-                        <h4>Discussion & Debate</h4>
-                        <p>Exaggerated facial expressions for immediate click appeal.</p>
-                    </div>
-                </div>
-                <!-- Future Video Item placeholder (Hidden by default or shown with tag) -->
-                <div class="portfolio-item videos scroll-fade" style="display: none;">
-                    <div class="portfolio-img-placeholder video-placeholder">
-                        <i class="fas fa-play-circle"></i>
-                        <span>Video Project (Coming Soon)</span>
-                    </div>
-                    <div class="portfolio-info">
-                        <h4>Professional Video Editing</h4>
-                        <p>Pacing, retention tactics, and cinematic grading.</p>
+                <div class="workflow-timeline scroll-fade">
+                    <h3>My Workflow</h3>
+                    <div class="timeline-container">
+                        <span class="timeline-step">Research</span> <i class="fas fa-arrow-right"></i>
+                        <span class="timeline-step">Video Analysis</span> <i class="fas fa-arrow-right"></i>
+                        <span class="timeline-step">Concepting</span> <i class="fas fa-arrow-right"></i>
+                        <span class="timeline-step">AI Generation</span> <i class="fas fa-arrow-right"></i>
+                        <span class="timeline-step">Photoshop Compositing</span> <i class="fas fa-arrow-right"></i>
+                        <span class="timeline-step">Color Grading</span> <i class="fas fa-arrow-right"></i>
+                        <span class="timeline-step">Final Delivery</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="text-center scroll-fade" style="margin-top: 4rem;">
-                <a href="https://drive.google.com/drive/folders/1UmfCI-XWDt73qXNQelYNCoUN9bC6xhPM" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                    <i class="fab fa-google-drive"></i> View Full Portfolio
-                </a>
+        <!-- Skills & Strengths Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header scroll-fade">
+                    <h2 class="section-title">Technical <span class="highlight">Expertise</span></h2>
+                </div>
+                <div class="skills-wrapper">
+                    <div class="skill-category scroll-fade">
+                        <h3><i class="fas fa-pen-nib"></i> Design & Editing</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Advanced Photoshop</li>
+                            <li><i class="fas fa-check"></i> Photo Manipulation</li>
+                            <li><i class="fas fa-check"></i> Color Correction & Grading</li>
+                            <li><i class="fas fa-check"></i> Complex Compositing</li>
+                            <li><i class="fas fa-check"></i> Professional Retouching</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category scroll-fade">
+                        <h3><i class="fas fa-robot"></i> AI Workflow</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> AI Image Generation</li>
+                            <li><i class="fas fa-check"></i> Prompt Engineering</li>
+                            <li><i class="fas fa-check"></i> AI + Photoshop Integration</li>
+                            <li><i class="fas fa-check"></i> Fast Concept Development</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category scroll-fade">
+                        <h3><i class="fas fa-bolt"></i> Key Strengths</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Cinematic Realism</li>
+                            <li><i class="fas fa-check"></i> Minimal & Powerful Designs</li>
+                            <li><i class="fas fa-check"></i> High CTR Thinking</li>
+                            <li><i class="fas fa-check"></i> Strong Subject Separation</li>
+                            <li><i class="fas fa-check"></i> Natural Facial Expressions</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Hire Me Section -->
-    <section id="why-hire-me" class="section">
-        <div class="container container-sm text-center scroll-fade">
-            <h2 class="section-title">Why <span class="highlight">Hire Me?</span></h2>
-            <p class="lead-text">I don't design thumbnails based on trends alone.</p>
-            <p class="body-text">I study audience behavior and combine psychology with visual storytelling to create thumbnails that are clean, professional, and click-worthy. I understand that the best thumbnail is the one that communicates instantly—not the one with the most effects.</p>
-        </div>
-    </section>
+        <!-- Portfolio Section -->
+        <section id="portfolio-section" class="section bg-darker">
+            <div class="container">
+                <div class="section-header scroll-fade">
+                    <h2 class="section-title">Featured <span class="highlight">Work</span></h2>
+                    <p>A selection of thumbnails designed for maximum engagement.</p>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb1.jpg" alt="Historical / Drama Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Historical / Drama</h4><p>Cinematic realism and strong visual hierarchy.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb2.jpg" alt="Mythological / Cinematic Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Mythological / Cinematic</h4><p>High contrast, expressive emotions, storytelling.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb3.jpg" alt="Modern / Informational Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Modern / Informational</h4><p>Clean typography and clear subject separation.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb4.jpg" alt="Social Issue Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Social & Cultural</h4><p>Evocative imagery and powerful emotional triggers.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb5.jpg" alt="Current Events Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Current Events / Protest</h4><p>High energy, compelling visual storytelling.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb6.jpg" alt="Political Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Political Analysis</h4><p>Multiple subject compositing and sharp text hierarchy.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb7.jpg" alt="Religious Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Religious / Cultural Analysis</h4><p>Rich colors, depth of field, and intriguing focal points.</p></div></div>
+                    <div class="portfolio-item thumbnails scroll-fade"><img src="assets/thumb8.jpg" alt="Controversial Topic Thumbnail" class="portfolio-img"><div class="portfolio-info"><h4>Discussion & Debate</h4><p>Exaggerated facial expressions for immediate click appeal.</p></div></div>
+                </div>
+                <div class="text-center scroll-fade" style="margin-top: 4rem;">
+                    <a href="https://drive.google.com/drive/folders/1UmfCI-XWDt73qXNQelYNCoUN9bC6xhPM" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <i class="fab fa-google-drive"></i> View Full Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container container-sm text-center scroll-fade">
+                <h2 class="section-title">Why <span class="highlight">Hire Me?</span></h2>
+                <p class="lead-text">I don't design thumbnails based on trends alone.</p>
+                <p class="body-text">I study audience behavior and combine psychology with visual storytelling to create thumbnails that are clean, professional, and click-worthy. I understand that the best thumbnail is the one that communicates instantly—not the one with the most effects.</p>
+            </div>
+        </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section bg-darker">
+    <!-- ========================================== -->
+    <!-- VIDEO EDITOR VIEW                          -->
+    <!-- ========================================== -->
+    <div id="editor-view" class="content-view" style="display: none;">
+        <!-- Editing Philosophy -->
+        <section class="section">
+            <div class="container container-sm scroll-fade">
+                <h2 class="section-title text-center"><span class="highlight">Editing</span> Philosophy</h2>
+                <div class="philosophy-text" style="margin-top: 2rem; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8;">
+                    <p style="margin-bottom: 1.5rem;">I believe that editing a video gives us access to the entire mindset of the person watching it. And that brings two things worth looking at.</p>
+                    <p style="margin-bottom: 1.5rem;">Most people who edit videos do not necessarily do it with complete awareness of what they are doing; they work for money. Because of this, their own superstitions and conditioning remain with them. As a result, an edit can be used to manipulate people—to fool them further and push them even deeper into the same pit they are already in. The intention becomes to earn money so that our own lives can improve, while the damage happens on both sides.</p>
+                    <p style="margin-bottom: 1.5rem;">The editor’s life does not necessarily become better after receiving the money, because there is still no self-knowledge, no realization of the self. And the people whose lives have been negatively influenced or destroyed have already been harmed. When the intention itself is wrong, there is ultimately nothing meaningful left standing.</p>
+                    <p style="margin-bottom: 1.5rem;">If I get the opportunity to edit videos for Acharya Prashant, however, there will be something beyond just earning from the work. There will also be a sense of peace—the peace that one wants to have in life. I will know that I am doing the work in the right direction, that I am not merely exploiting someone’s beliefs, but using the edit to help bring them towards the right thing.</p>
+                    <p style="margin-bottom: 1.5rem;">At the same time, this creates a very strong opportunity to work with the game of audience retention in a meaningful way. Whether through audio, color correction, sound effects, B-roll, or storytelling, every element can be used from the right center and with the right intention.</p>
+                    <p>That is why I believe it would be a very meaningful position to get the opportunity to edit Acharya Ji’s videos, so that they can reach the right people. At the same time, it would be necessary to remain updated with what is happening in the current visual and media landscape. This means continuously observing the fonts used in movies and series, understanding the designs and visual language that are currently working in the market, and staying informed about what is being created and consumed at a subconscious level so that the editing remains relevant and connected with the present audience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Skills Section -->
+        <section class="section bg-darker">
+            <div class="container">
+                <div class="section-header scroll-fade">
+                    <h2 class="section-title">Core <span class="highlight">Skills</span></h2>
+                </div>
+                <div class="skills-wrapper" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                    <div class="skill-category scroll-fade">
+                        <h3><i class="fas fa-film"></i> Video Editing</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Adobe Premiere Pro</li>
+                            <li><i class="fas fa-check"></i> Cutting & Pacing</li>
+                            <li><i class="fas fa-check"></i> Basic Storytelling & Transitions</li>
+                            <li><i class="fas fa-check"></i> Audio Synchronization</li>
+                            <li><i class="fas fa-check"></i> Basic Color Correction</li>
+                            <li><i class="fas fa-check"></i> Video Formatting & Export</li>
+                            <li><i class="fas fa-check"></i> YouTube / Social Media Video Editing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category scroll-fade">
+                        <h3><i class="fas fa-lightbulb"></i> Creative Skills</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Visual Communication</li>
+                            <li><i class="fas fa-check"></i> Content Presentation</li>
+                            <li><i class="fas fa-check"></i> Creative Problem Solving</li>
+                            <li><i class="fas fa-check"></i> Attention to Detail</li>
+                            <li><i class="fas fa-check"></i> Understanding of Audience Psychology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Portfolio Showcase -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header scroll-fade">
+                    <h2 class="section-title">Featured <span class="highlight">Edits</span></h2>
+                    <p>Autoplaying portfolio pieces. Use the custom controls to review pacing and quality.</p>
+                </div>
+                
+                <div class="video-grid scroll-fade">
+                    <!-- Video 1 -->
+                    <div class="video-card">
+                        <div class="custom-video-wrapper">
+                            <video src="https://drive.google.com/uc?export=download&id=129ZjnWqdq7wGtA3u-aXVrh22Fr4Gp7nU" autoplay muted loop class="portfolio-video" id="vid1"></video>
+                            <div class="video-controls">
+                                <div class="progress-container" onclick="seekVideo('vid1', event)">
+                                    <div class="progress-bar" id="progress-vid1"></div>
+                                </div>
+                                <div class="controls-row">
+                                    <button class="ctrl-btn" onclick="togglePlay('vid1')"><i class="fas fa-pause" id="icon-play-vid1"></i></button>
+                                    <button class="ctrl-btn" onclick="toggleMute('vid1')"><i class="fas fa-volume-mute" id="icon-mute-vid1"></i></button>
+                                    <button class="ctrl-btn" onclick="skipVideo('vid1', -10)"><i class="fas fa-undo"></i> 10s</button>
+                                    <button class="ctrl-btn" onclick="skipVideo('vid1', 10)">10s <i class="fas fa-redo"></i></button>
+                                    <select class="ctrl-select" onchange="changeSpeed('vid1', this.value)">
+                                        <option value="0.5">0.5x Pace</option>
+                                        <option value="1" selected>1.0x Pace</option>
+                                        <option value="1.25">1.25x Pace</option>
+                                        <option value="1.5">1.5x Pace</option>
+                                        <option value="2">2.0x Pace</option>
+                                    </select>
+                                    <select class="ctrl-select">
+                                        <option>1080p Source</option>
+                                        <option>720p Optimized</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Trip Or Teerthyatra?</h4>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div class="video-card">
+                        <div class="custom-video-wrapper">
+                            <video src="https://drive.google.com/uc?export=download&id=1KZdxwFqX3ds9_GsxmQE2-t12XnlJqaVl" autoplay muted loop class="portfolio-video" id="vid2"></video>
+                            <div class="video-controls">
+                                <div class="progress-container" onclick="seekVideo('vid2', event)">
+                                    <div class="progress-bar" id="progress-vid2"></div>
+                                </div>
+                                <div class="controls-row">
+                                    <button class="ctrl-btn" onclick="togglePlay('vid2')"><i class="fas fa-pause" id="icon-play-vid2"></i></button>
+                                    <button class="ctrl-btn" onclick="toggleMute('vid2')"><i class="fas fa-volume-mute" id="icon-mute-vid2"></i></button>
+                                    <button class="ctrl-btn" onclick="skipVideo('vid2', -10)"><i class="fas fa-undo"></i> 10s</button>
+                                    <button class="ctrl-btn" onclick="skipVideo('vid2', 10)">10s <i class="fas fa-redo"></i></button>
+                                    <select class="ctrl-select" onchange="changeSpeed('vid2', this.value)">
+                                        <option value="0.5">0.5x Pace</option>
+                                        <option value="1" selected>1.0x Pace</option>
+                                        <option value="1.25">1.25x Pace</option>
+                                        <option value="1.5">1.5x Pace</option>
+                                        <option value="2">2.0x Pace</option>
+                                    </select>
+                                    <select class="ctrl-select">
+                                        <option>1080p Source</option>
+                                        <option>720p Optimized</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Jahan Maine Dil Gavaya!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Hire Me (Editor) -->
+        <section class="section bg-darker">
+            <div class="container container-sm text-center scroll-fade">
+                <h2 class="section-title">Why <span class="highlight">Hire Me?</span></h2>
+                <p class="body-text" style="font-size: 1.1rem; margin-bottom: 1.5rem;">I’m not just learning video editing—I’m learning to understand how an edit affects the person watching it. I want to use storytelling, sound, visuals, color, and pacing not merely to hold attention, but to communicate something meaningful.</p>
+                <p class="body-text" style="font-size: 1.1rem;">I’m continuously improving my editing skills, staying updated with modern visual language, and learning to create edits that are both engaging and purposeful.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Universal Contact & Footer (Shared between views) -->
+    <section id="contact" class="section bg-darker" style="border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="container text-center scroll-fade">
-            <h2 class="section-title">Ready to boost your <span class="highlight">CTR?</span></h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">I would love the opportunity to contribute to your channel's growth through high-converting visuals.</p>
-            
-            <div class="contact-box">
-                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Let's discuss your next high-performing thumbnail.</p>
+            <h2 class="section-title">Ready to work <span class="highlight">together?</span></h2>
+            <div class="contact-box" style="margin-top: 3rem;">
+                <p style="font-size: 1.2rem; margin-bottom: 1rem;">Let's discuss your next project.</p>
                 <div class="contact-details" style="margin-top: 1.5rem;">
                     <p><i class="fas fa-envelope"></i> <a href="mailto:rajanrd167@gmail.com">rajanrd167@gmail.com</a></p>
                     <p><i class="fas fa-phone"></i> <a href="tel:+919689228956">+91 9689228956</a></p>
@@ -286,7 +379,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container footer-container">
             <div class="footer-logo">Rajan<span>.</span></div>

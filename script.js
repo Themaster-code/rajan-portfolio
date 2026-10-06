@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if(hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            // Toggle icon between bars and times (close)
             const icon = hamburger.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -48,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Scroll Animations (Intersection Observer) ---
+    setupScrollAnimations();
+});
+
+function setupScrollAnimations() {
     const fadeElements = document.querySelectorAll('.scroll-fade');
     
     const observerOptions = {
@@ -60,8 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Optional: Stop observing once it's visible if you only want it to animate once
-                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -69,37 +70,112 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(element => {
         scrollObserver.observe(element);
     });
+}
 
-    // --- Portfolio Filtering ---
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            portfolioItems.forEach(item => {
-                if (filterValue === 'all') {
-                    item.style.display = 'block';
-                    // Re-trigger animation
-                    setTimeout(() => {
-                        item.classList.add('visible');
-                    }, 50);
-                } else if (item.classList.contains(filterValue)) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.classList.add('visible');
-                    }, 50);
-                } else {
-                    item.style.display = 'none';
-                    item.classList.remove('visible');
-                }
-            });
+// --- View Switching Logic ---
+function switchView(view) {
+    const thumbnailView = document.getElementById('thumbnail-view');
+    const editorView = document.getElementById('editor-view');
+    
+    if (view === 'thumbnail') {
+        thumbnailView.style.display = 'block';
+        editorView.style.display = 'none';
+        
+        // Scroll to content
+        window.scrollTo({
+            top: thumbnailView.offsetTop - 80,
+            behavior: 'smooth'
         });
+    } else if (view === 'editor') {
+        editorView.style.display = 'block';
+        thumbnailView.style.display = 'none';
+        
+        // Scroll to content
+        window.scrollTo({
+            top: editorView.offsetTop - 80,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Re-trigger animations for the new view
+    setupScrollAnimations();
+}
+
+function showHero(e) {
+    if(e) e.preventDefault();
+    const thumbnailView = document.getElementById('thumbnail-view');
+    const editorView = document.getElementById('editor-view');
+    
+    thumbnailView.style.display = 'none';
+    editorView.style.display = 'none';
+    
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
+}
+
+// --- Custom Video Player Controls ---
+function togglePlay(id) {
+    const video = document.getElementById(id);
+    const icon = document.getElementById('icon-play-' + id);
+    if (video.paused) {
+        video.play();
+        icon.classList.remove('fa-play');
+        icon.classList.add('fa-pause');
+    } else {
+        video.pause();
+        icon.classList.remove('fa-pause');
+        icon.classList.add('fa-play');
+    }
+}
+
+function toggleMute(id) {
+    const video = document.getElementById(id);
+    const icon = document.getElementById('icon-mute-' + id);
+    if (video.muted) {
+        video.muted = false;
+        icon.classList.remove('fa-volume-mute');
+        icon.classList.add('fa-volume-up');
+    } else {
+        video.muted = true;
+        icon.classList.remove('fa-volume-up');
+        icon.classList.add('fa-volume-mute');
+    }
+}
+
+function skipVideo(id, seconds) {
+    const video = document.getElementById(id);
+    video.currentTime += seconds;
+}
+
+function changeSpeed(id, speed) {
+    const video = document.getElementById(id);
+    video.playbackRate = parseFloat(speed);
+}
+
+function setupVideoProgress(id) {
+    const video = document.getElementById(id);
+    const progressBar = document.getElementById('progress-' + id);
+    if(video && progressBar) {
+        video.addEventListener('timeupdate', () => {
+            const percentage = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = percentage + '%';
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupVideoProgress('vid1');
+    setupVideoProgress('vid2');
 });
+
+function seekVideo(id, event) {
+    const video = document.getElementById(id);
+    const container = event.currentTarget;
+    const rect = container.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const percentage = clickX / rect.width;
+    video.currentTime = percentage * video.duration;
+}
+
